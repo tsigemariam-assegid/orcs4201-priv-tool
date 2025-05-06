@@ -1,0 +1,216 @@
+
+<!-- Author: Konstantinos Anagnostopoulos -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 1) Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    >
+
+    <!-- 2) Global layout rules -->
+    <link
+      rel="stylesheet"
+      href="/static/css/layout.css"
+    >
+
+    <!-- 2.1) Utility styles (sidebar-next, etc.) -->
+    <link
+      rel="stylesheet"
+      href="/static/css/util.css"
+    >
+
+    <link rel="stylesheet" href="/static/css/layout-background.css">
+
+
+    <!-- 3) Custom fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    >
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap"
+      rel="stylesheet"
+    >
+
+    <!-- 3.1) Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    >
+
+    <!-- 4) Page-specific head overrides -->
+    
+  <link rel="stylesheet" href="/static/css/report-base.css">
+  <link rel="stylesheet" href="/static/css/report-layout.css">
+  <link rel="stylesheet" href="/static/css/report-grid.css">
+  <link rel="stylesheet" href="/static/css/report-tech-description.css">
+  <link rel="stylesheet" href="/static/css/report-ranking.css">
+  <link rel="stylesheet" href="/static/css/report-ranking-list.css">
+  <link rel="stylesheet" href="/static/css/report-typewriter.css">
+  <link rel="stylesheet" href="/static/css/report-question-box.css">
+  <link rel="stylesheet" href="/static/css/report-crypto-toggle.css">
+  <link rel="stylesheet" href="/static/css/report-dp-toggle.css">
+  <link rel="stylesheet" href="/static/css/report-dp-results.css">
+  <link rel="stylesheet" href="/static/css/report-crypto-results.css">
+
+
+    <!-- 5) jQuery & Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    ></script>
+  </head>
+
+  <body>
+
+    <div class="container-fluid fullscreen-bg">
+
+      <div class="gradient-background">
+        <div class="gradient-sphere sphere-1"></div>
+        <div class="gradient-sphere sphere-2"></div>
+        <div class="glow"></div>
+        <div class="noise-overlay"></div>
+        <div class="particles-container" id="particles-container"></div>
+      </div>
+      
+
+      <!-- Navbar (pill-style) -->
+      <nav class="navbar">
+        <ul class="nav-tabs">
+          <!-- sliding background “pill” -->
+          <li class="tab-slider"></li>
+
+          <li>
+            <a
+              href="/home.html"
+              class=""
+              aria-label="Home"
+            >
+              <i class="bi bi-house-fill"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/identify.html"
+              class=""
+            >
+              Identify
+            </a>
+          </li>
+          <li>
+            <a
+              href="/govern.html"
+              class=""
+            >
+              Govern
+            </a>
+          </li>
+          <li>
+            <a
+              href="/control.html"
+              class=""
+            >
+              Control
+            </a>
+          </li>
+          <li>
+            <a
+              href="/communicate.html"
+              class=""
+            >
+              Communicate
+            </a>
+          </li>
+          <li>
+            <a
+              href="/protect.html"
+              class=""
+            >
+              Protect
+            </a>
+          </li>
+          <li>
+            <a
+              href="/report.html"
+              class="active"
+            >
+              Report
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Center placeholder -->
+      <div class="center-box">
+        
+      </div>
+
+      
+      
+  <div class="w-100">
+    <!-- small spacer at top -->
+    <div class="row spacer-row"></div>
+    <!-- new extra spacer row with typewriter -->
+    <div class="row spacer-second-row">
+      <div class="col-12">
+        <div class="typewriter-container">
+          <span class="static-text">The privacy tool we recommend:</span>
+          <span class="placeholder">The privacy tool we recommend:</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-0 equalize-grid">
+      <div class="col-4 pink-col">
+        <div id="tech-descr-container" class="tech-descr-container"></div>
+      </div>
+      <div class="col-8 red-col">
+        <div class="container-fluid px-0">
+          <div class="row">
+            <a class="col-4 ranking-cell overall-cell" id="cell-overall"></a>
+            <a class="col-4 ranking-cell" href="/identify.html" id="cell-identify"></a>
+            <a class="col-4 ranking-cell" href="/govern.html" id="cell-govern"></a>
+          </div>
+          <div class="row">
+            <a class="col-4 ranking-cell" href="/control.html" id="cell-control"></a>
+            <a class="col-4 ranking-cell" href="/communicate.html" id="cell-communicate"></a>
+            <a class="col-4 ranking-cell" href="/protect.html" id="cell-protect"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div id="crypto-specifics-section" style="height:1px;visibility:hidden;"></div>
+    
+    
+    <div class="row mt-5">
+      <div class="col-12 px-0">
+        <div id="crypto-questions-container"></div>
+        <div id="dp-questions-container"></div>
+      </div>
+    </div>
+  </div>
+
+      
+    </div>
+
+    <!-- Page-specific scripts -->
+
+    
+  
+      <script src="/static/js/layout.js" defer></script>
+      <script src="/static/js/layout-background.js" defer></script>
+    
+  <script type="module" src="/static/js/utils.js"></script>
+  <script type="module" src="/static/js/report-core.js"></script>
+
+
+  </body>
+  
+
+</html>
