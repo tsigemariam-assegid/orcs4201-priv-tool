@@ -1,8 +1,12 @@
 from flask import Flask, render_template
 from flask_frozen import Freezer
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 freezer = Freezer(app)
+
+@app.context_processor
+def inject_base_url():
+    return dict(base_url='/orcs4201-priv-tool')
 
 @app.route("/")
 @app.route("/home")
